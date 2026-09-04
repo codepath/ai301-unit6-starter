@@ -8,18 +8,20 @@ old one:
   manual doorway) and one hook entry in your Claude Code settings
   (`hooks-settings.json` is the block you merge). Both are
   staff-complete; you write no code.
-- **Replaced:** repro-check's `scope.md`, the unit-2 sandbox scope
-  for the wild one (`repro-check-scope-wild.md`, staff-complete;
-  the activity's phase 1 has the copy command). The classroom house
-  rules do not travel, and the wild scope states the flipped norms.
+- **Replaced:** repro-check's and plan-check's `scope.md`, the unit-2
+  and unit-3 sandbox scopes for the wild ones
+  (`repro-check-scope-wild.md` and `plan-check-scope-wild.md`,
+  staff-complete; the activity's phase 1 has both copy commands). The
+  classroom house rules do not travel, and each wild scope states the
+  flipped norms for its tool.
 - **Promoted:** your voice guide, to one canonical home at
   `~/.claude/voice-guard/voice-guide.md`. The guard reads it there,
   and from today that copy is the guide of record: it is the one you
   edit.
 - **Yours and untouched:** the scout (`issue-scout/` and everything
   in it: your rubric, your strategy, your evidence guide), the
-  unit-1 harness, and every Module 1 skill folder in your
-  `ai301-tools` repo exactly as you submitted it.
+  unit-1 harness, and every Module 1 skill folder in your course
+  repo's `tools/` exactly as you submitted it.
 
 The guard never runs in eval mode. Nothing here touches how the
 unit-1 regression measures your rubric.
@@ -127,7 +129,7 @@ you broke, quoted.
 
 Every check, both doorways, appends one dated line to
 `~/.claude/voice-guard/guard-log.md`. That file is your guard
-transcript: the activity's after-class steps have you copy it to
-`voice-guard/guard-transcript.md` in your `ai301-tools` repo, next
-to the guard files and your canonical guide, as Assignment 5
-evidence that the doorway was on the door for your real claim.
+transcript. It stays on your machine with the guard files and your
+canonical guide: the unit-6 Toolkit entry in your round-1 README, in
+your own words, is what Assignment 5 reads, and the guard itself is
+unit-9 portfolio material.

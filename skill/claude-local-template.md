@@ -48,10 +48,10 @@ From the clone root:
 
   echo CLAUDE.local.md >> .git/info/exclude
 
-Then confirm with `git status`: the file should not appear. The
-evidence copy for Assignment 5 goes to your ai301-tools repo as
-repo-memory/CLAUDE.local.md with a one-line provenance header (which
-repo, which date); the copy in the clone stays local forever.
+Then confirm with `git status`: the file should not appear. The file
+stays local to the clone forever; Assignment 5 collects no copy of
+it, and the repo memory's story belongs in your round-1 README's
+Toolkit entry.
 -->
 
 @AGENTS.md

@@ -44,9 +44,7 @@ The note is information for the chooser, never a verdict input: it
 does not appear in the fenced JSON block, it never changes accept or
 reject, and in eval mode it is skipped entirely.
 
-<!-- Regression expectation, honestly stated: the frozen unit-1 set
-was labeled under sandbox norms. This patch keeps true umbrella
-issues rejecting (the floor catches them) while accepting bounded
-issues with open edges, so your agreement number may move in either
-direction. Whatever it does, the graded evidence is the complete run
-plus your dated read of it, never the number. -->
+<!-- Honestly stated: this patch keeps true umbrella issues rejecting
+(the floor catches them) while accepting bounded issues with open
+edges. Note the patch and what drove it in your Toolkit entry; the
+patch itself is unit-9 portfolio material. -->
