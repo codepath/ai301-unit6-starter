@@ -130,6 +130,6 @@ you broke, quoted.
 Every check, both doorways, appends one dated line to
 `~/.claude/voice-guard/guard-log.md`. That file is your guard
 transcript. It stays on your machine with the guard files and your
-canonical guide: the unit-6 Toolkit entry in your round-1 README, in
-your own words, is what Assignment 5 reads, and the guard itself is
-unit-9 portfolio material.
+canonical guide: the unit-6 Toolkit entry in your contribution
+story, in your own words, is what Assignment 5 reads, and the guard
+itself is unit-9 portfolio material.

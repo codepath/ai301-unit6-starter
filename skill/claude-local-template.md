@@ -50,8 +50,8 @@ From the clone root:
 
 Then confirm with `git status`: the file should not appear. The file
 stays local to the clone forever; Assignment 5 collects no copy of
-it, and the repo memory's story belongs in your round-1 README's
-Toolkit entry.
+it, and the repo memory's story belongs in your contribution
+story's Toolkit entry.
 -->
 
 @AGENTS.md

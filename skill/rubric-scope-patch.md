@@ -1,10 +1,12 @@
 # Today's rubric patch: scope stops gating, starts informing
 
 <!-- Staff-shipped patch text for YOUR rubric.md. Paste the row and
-the section below into your rubric (the row replaces scope-newcomer;
-the section goes under your checks table), reword them in your own
-voice if you like (it is your rubric), and add the dated patch note
-per the unit-5 rule. Delete this comment block wherever you paste. -->
+the section below into your rubric (the row replaces whichever check
+in your table grades scope, from the unit-1 family "the scope fits a
+newcomer"; the section goes under your checks table), reword them in
+your own voice if you like (it is your rubric), and add the dated
+patch note per the unit-5 rule. Delete this comment block wherever
+you paste. -->
 
 ## Why this patch exists
 
@@ -21,7 +23,16 @@ filtered. You choose with eyes open; an open edge in an issue you
 claim becomes your first question to the maintainer, which is
 exactly the claim craft this week teaches.
 
-## The replacement row (replaces `scope-newcomer` in your checks table)
+## The replacement row (replaces your scope check in your checks table)
+
+You wrote your own rubric in unit 1, so your checks carry your own
+names and there is no one row name to look for here. Replace the row
+that grades whether the issue is a single bounded piece of work a
+newcomer could take on, whatever you called it (the unit-1 lecture
+called that family "the scope fits a newcomer"). If your table has no
+scope row at all, add the row below as a new required check. Nothing
+else in your table changes, and the row you swap out is worth naming
+in your dated patch note.
 
 | Check | Evidence | Pass condition | Weight |
 |---|---|---|---|
