@@ -2,10 +2,10 @@
 
 <!--
 This is the real-world scope for repro-check. It replaces the unit-2
-sandbox scope.md in your INSTALLED skill (activity phase 1 has the
-copy command): the field is no longer the Path Review repo, and the
+sandbox scope.md in your INSTALLED skill (the unit 6 Assignment
+tab has the copy command): the field is no longer the Path Review repo, and the
 classroom house rules do not travel. Like every scope file, this one
-is the skill's field of view, live mode only: the rubric (rubric.md)
+says where the skill works, live mode only: the rubric (rubric.md)
 decides whether a package or a claim draft is READY; the scope
 decides which issues the skill may work against at all, and what the
 rules are where that issue lives. Eval runs never read this file.

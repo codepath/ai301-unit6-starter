@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""voice-guard: your voice pass, moved onto the posting doorway.
+"""voice-guard: your voice pass, run before every post.
 
 The check is not new. Since unit 2, repro-check's live mode has read
 voice-guide.md and held every outgoing draft against the author's own
@@ -10,7 +10,7 @@ as a Claude Code PreToolUse hook, so it fires on every outgoing
 `gh pr create` body by construction, instead of when someone
 remembers to invoke a skill.
 
-Two doorways, one contract:
+Two modes, one contract:
 
   hook mode (no arguments): invoked by Claude Code with the tool-call
     JSON on stdin (see hooks-settings.json). Commands that carry no
@@ -24,8 +24,7 @@ Two doorways, one contract:
     Exit 0 on pass, 2 on stop.
 
 Every check appends one dated line to guard-log.md next to this
-file. That log is your guard transcript: Assignment 5's evidence
-that the doorway was really on the door.
+file. That log is your guard transcript.
 
 The guard is a live-mode-only seam: nothing invokes it in eval mode,
 and it never reads or changes the scout, your rubric, or the unit-1
@@ -35,9 +34,8 @@ technical content of what you post.
 Honesty note: the guard checks commands it can read. Posting from a
 bare terminal, or through a command form it does not parse (a raw
 `gh api` POST), walks around it, exactly like not running a skill. It
-is your own conscience with a latch on the door, not a security
-system; the enforcement it adds is that inside Claude Code, where
-you work, the latch is always on.
+is a check on your own words, not a security system; what it adds
+is that inside Claude Code, where you work, the check always runs.
 """
 
 import argparse
@@ -143,7 +141,7 @@ def extract_body(tokens: list[str], start: int, cwd: str):
                 return None, f"could not read the body file: {e}"
         i += 1
     return None, ("no body the guard can read (interactive and --help "
-                  "forms are stopped at this door on purpose). Write "
+                  "forms are stopped on purpose). Write "
                   "your draft to a file and post with --body-file, or "
                   "run the manual check first.")
 
@@ -221,8 +219,8 @@ def check_draft(draft: str, mode: str, target: str) -> int:
         verdict = run_voice_pass(guide, draft)
     except RuntimeError as e:
         return stop(f"the check could not run ({e}). Fix that or "
-                    "flag a TF; the door stays shut until the check "
-                    "can read your draft.",
+                    "flag a TF; nothing posts until the check can "
+                    "read your draft.",
                     mode, target, f"stop: checker failed ({e})")
     if verdict["verdict"] == "pass":
         log_line(mode, target, "pass")
@@ -274,7 +272,7 @@ def main() -> int:
         "voice-guard checker: hook mode (no args, stdin JSON) or "
         "manual mode (--draft FILE)."))
     ap.add_argument("--draft", metavar="FILE",
-                    help="check a draft file (the manual doorway for "
+                    help="check a draft file (the manual check for "
                          "browser posts)")
     args = ap.parse_args()
     if args.draft:

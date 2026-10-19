@@ -1,17 +1,18 @@
 # Installing the voice-guard (the overlay, stated loudly)
 
-This install puts your own voice check on the posting doorway. It is
+This install runs your own voice check before anything you post
+through Claude Code. It is
 an **overlay onto what you already own**, not a new tool replacing an
 old one:
 
 - **Added:** the guard: `check_voice.py` (the checker, with its
-  manual doorway) and one hook entry in your Claude Code settings
+  manual check for browser posts) and one hook entry in your Claude Code settings
   (`hooks-settings.json` is the block you merge). Both are
   staff-complete; you write no code.
 - **Replaced:** repro-check's and plan-check's `scope.md`, the unit-2
   and unit-3 sandbox scopes for the wild ones
   (`repro-check-scope-wild.md` and `plan-check-scope-wild.md`,
-  staff-complete; the activity's phase 1 has both copy commands). The
+  staff-complete; the Assignment tab has both copy commands). The
   classroom house rules do not travel, and each wild scope states the
   flipped norms for its tool.
 - **Promoted:** your voice guide, to one canonical home at
@@ -20,7 +21,7 @@ old one:
   edit.
 - **Yours and untouched:** the scout (`issue-scout/` and everything
   in it: your rubric, your strategy, your evidence guide), the
-  unit-1 harness, and every Module 1 skill folder in your course
+  unit-1 harness, and every Beat 1 skill folder in your course
   repo's `tools/` exactly as you submitted it.
 
 The guard never runs in eval mode. Nothing here touches how the
@@ -42,9 +43,8 @@ of `skill/voice-guide-upstream.md` lists what each section holds.
 copy `skill/voice-guide-upstream.md` to
 `~/.claude/skills/repro-check/voice-guide.md` and write every
 section fresh (its closing comment restates the unit-2 frame). You
-are writing all your rules today instead of extending them; budget
-phase 1 for exactly that and flag a TF if you want a second pair of
-eyes.
+are writing all your rules today instead of extending them; leave
+time for it, and ask a TF if you want a second pair of eyes.
 
 ## 2. Extend it upstream
 
@@ -73,11 +73,10 @@ ln -sf ~/.claude/voice-guard/voice-guide.md ~/.claude/skills/pr-precheck/voice-g
 The `mv` is the promotion; the `ln` lines leave repro-check,
 plan-check, and pr-precheck all reading the same single file (each
 skill's live mode reads `voice-guide.md` from its own folder), so
-every skill you run drafts through and the guard on the door can
-never disagree about your rules. The last two use `-f` because they
+the skills you draft with and the guard can never disagree about your rules. The last two use `-f` because they
 overwrite your frozen carry-over copies, which step 1 already folded
 back. `hooks-settings.json` rides along so the canonical home holds
-everything the after-class upload needs. (If `ln -s` errors on your
+every guard file in one place. (If `ln -s` errors on your
 system, instead create each skill's `voice-guide.md` containing the
 single line: `My voice guide now lives at ~/.claude/voice-guard/voice-guide.md; read it there.`)
 
@@ -97,9 +96,10 @@ startup).
 One thing said out loud: the hook is user-global. From now on the
 guard reads every outgoing comment, issue, or PR body you post
 through Claude Code, in every repo, course or not. That is the
-design: the latch is on the door, not on the course.
+design: the guard checks what you post through Claude Code, course
+work or not.
 
-## 5. Prove the latch is on
+## 5. Test that the guard fires
 
 The wiring test costs nothing and should be STOPPED:
 
@@ -108,7 +108,7 @@ claude "run this command: gh issue comment --help"
 ```
 
 Expect the guard to block it with "no body the guard can read"; that
-stop IS the pass, proof the hook fires on the comment doorway before
+stop IS the pass, proof the hook fires on comment commands before
 anything goes out. (Body-less forms are stopped on purpose; real
 posts always carry `--body-file`, and a plain terminal still runs
 `gh issue comment --help` fine.) If the command runs unblocked
@@ -127,7 +127,7 @@ you broke, quoted.
 
 ## 6. The evidence trail
 
-Every check, both doorways, appends one dated line to
+Every check, hook or manual, appends one dated line to
 `~/.claude/voice-guard/guard-log.md`. That file is your guard
 transcript. It stays on your machine with the guard files and your
 canonical guide: the unit-6 Toolkit entry in your contribution

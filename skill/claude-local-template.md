@@ -66,8 +66,8 @@ wrote this. -->
 
 ## Conventions from CONTRIBUTING.md
 
-<!-- Only the rules that will actually steer your work: what gates a
-PR, scope rules, branch and commit conventions, the process asks you
+<!-- Only the rules that will actually steer your work: what a PR needs
+before it's accepted, scope rules, branch and commit conventions, the process asks you
 could get wrong. Quote thresholds exactly; paraphrase the rest. -->
 
 ## The subsystem my issue touches

@@ -49,11 +49,11 @@ against the repo's own reply rhythm, never your clock, and never
 pressure dressed as politeness. -->
 
 <!--
-NO WEEK-2 GUIDE? The frame carries you. Write ALL the sections fresh
+NO UNIT 2 GUIDE? The frame carries you. Write ALL the sections fresh
 in your canonical guide, today: the unit-2 three (below) first, then
 the three upstream subsections above. It is more writing, and it is
-entirely doable in the activity's phase 1; flag a TF if you want a
-second pair of eyes on your first rules.
+entirely doable; ask a TF if you want a second pair of eyes on your
+first rules.
 
 The unit-2 frame, so you do not need the old materials open:
 

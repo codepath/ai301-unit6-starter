@@ -2,10 +2,10 @@
 
 <!--
 This is the real-world scope for plan-check. It replaces the unit-3
-sandbox scope.md in your INSTALLED skill (activity phase 1 has the
-copy command, beside repro-check's): the field is no longer the Path
+sandbox scope.md in your INSTALLED skill (the unit 6 Assignment
+tab has the copy command, beside repro-check's): the field is no longer the Path
 Review repo, and the classroom house rules do not travel. Like every
-scope file, this one is the skill's field of view, live mode only: the
+scope file, this one says where the skill works, live mode only: the
 rubric (rubric.md) decides whether a plan package or your own plan
 draft is READY; the scope decides which issues the skill may plan
 against at all, and what the rules are where that plan lands. Eval
