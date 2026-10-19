@@ -56,7 +56,7 @@ GUIDE_PATH = GUARD_DIR / "voice-guide.md"
 LOG_PATH = GUARD_DIR / "guard-log.md"
 
 PROMPT = """You are the voice guard: the same voice pass repro-check's live mode
-runs, now at the posting doorway. Below are (1) the author's voice
+runs, now checking every post before it goes up. Below are (1) the author's voice
 guide, their own rules for how they write upstream, with wrong/right
 pairs and a list of things they never post, and (2) a draft comment
 about to be posted publicly under their name.
