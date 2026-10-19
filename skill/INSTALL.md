@@ -56,8 +56,9 @@ wrong/right pair each. This is the judgment part of the install; the
 lecture's drafting moment gave you the first 2-3 rules, and the rest
 you write now. Write each rule as plain text under its heading, outside the
 comment blocks, in the format the Claims comment shows (`#### Rule:`,
-then a Wrong line and a Right line). The guard ignores everything
-inside a comment, so a rule left inside one doesn't count. Once your
+then a Wrong line and a Right line). The guard skips comments when it
+checks that your guide has rules, so a rule left inside one may not
+count. Once your
 rules are in, delete the template's instruction comments: the guide of record carries rules, not
 scaffolding. (Started a fresh guide in step 1? It already has the
 Upstream section, so skip the append and fill it.)
@@ -104,10 +105,11 @@ Merge the block from `skill/hooks-settings.json` into
   existing `"PreToolUse"` list), with a comma between it and the
   entry before it.
 
-Save, then check the file is valid JSON (no output means it is):
+Save, then check the file. It should print "voice guard hook found"
+(an error means the JSON is broken, often a missing comma):
 
 ```
-python3 -c 'import json, os; json.load(open(os.path.expanduser("~/.claude/settings.json")))'
+python3 -c 'import json, os; s = json.load(open(os.path.expanduser("~/.claude/settings.json"))); print("voice guard hook found" if any("check_voice" in h.get("command", "") for e in s.get("hooks", {}).get("PreToolUse", []) for h in e.get("hooks", [])) else "hook NOT found, check step 4 again")'
 ```
 
 Then start a fresh `claude` session (settings load at
@@ -130,7 +132,7 @@ stop IS the pass, proof the hook fires on comment commands before
 anything goes out. (Body-less forms are stopped on purpose; real
 posts always carry `--body-file`, and a plain terminal still runs
 `gh issue comment --help` fine.) If the command runs unblocked
-instead: run step 4's JSON check, then replace
+instead: run step 4's check, then replace
 `$HOME` in the hook's command with your absolute home directory
 path; those two cover nearly every miss.
 
