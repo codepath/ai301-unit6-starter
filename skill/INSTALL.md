@@ -19,8 +19,9 @@ old one:
   `~/.claude/voice-guard/voice-guide.md`. The guard reads it there,
   and from today that copy is the guide of record: it is the one you
   edit.
-- **Yours and untouched:** the scout (`issue-scout/` and everything
-  in it: your rubric, your strategy, your evidence guide), the
+- **Not touched by this install:** the scout (`issue-scout/` and
+  everything in it: your rubric, your strategy, your evidence guide;
+  you patch the rubric yourself with `rubric-scope-patch.md`), the
   unit-1 harness, and every Beat 1 skill folder in your course
   repo's `tools/` exactly as you submitted it.
 
@@ -53,8 +54,11 @@ below its opening comment) to your guide, and fill the three
 subsections: claims, questions, pings, at least one rule each,
 wrong/right pair each. This is the judgment part of the install; the
 lecture's drafting moment gave you the first 2-3 rules, and the rest
-you write now. Once your rules are in, delete the template's
-instruction comments: the guide of record carries rules, not
+you write now. Write each rule as plain text under its heading, outside the
+comment blocks, in the format the Claims comment shows (`#### Rule:`,
+then a Wrong line and a Right line). The guard ignores everything
+inside a comment, so a rule left inside one doesn't count. Once your
+rules are in, delete the template's instruction comments: the guide of record carries rules, not
 scaffolding. (Started a fresh guide in step 1? It already has the
 Upstream section, so skip the append and fill it.)
 
@@ -85,19 +89,28 @@ single line: `My voice guide now lives at ~/.claude/voice-guard/voice-guide.md; 
 
 ## 4. The hook
 
-Open `~/.claude/settings.json` and merge in the block from
-`skill/hooks-settings.json`:
+Merge the block from `skill/hooks-settings.json` into
+`~/.claude/settings.json`:
 
-- No settings file yet, or it holds only `{}`: replace its contents
-  with the whole file.
+- No settings file yet: run
+  `cp ~/.claude/voice-guard/hooks-settings.json ~/.claude/settings.json`.
+  If the file exists but holds only `{}`, replace its contents with
+  the whole block.
 - Settings but no `"hooks"` key yet: copy the `"hooks": { ... }`
   entry from the file into your settings, with a comma between it
   and the entry before it.
 - Already have hooks: add the `PreToolUse` entry from the file into
   your existing `"hooks"` object (or its matcher entry into your
-  existing `"PreToolUse"` list).
+  existing `"PreToolUse"` list), with a comma between it and the
+  entry before it.
 
-Save, then start a fresh `claude` session (settings load at
+Save, then check the file is valid JSON (no output means it is):
+
+```
+python3 -c 'import json, os; json.load(open(os.path.expanduser("~/.claude/settings.json")))'
+```
+
+Then start a fresh `claude` session (settings load at
 startup).
 
 One thing said out loud: the hook is user-global. From now on the
@@ -117,7 +130,7 @@ stop IS the pass, proof the hook fires on comment commands before
 anything goes out. (Body-less forms are stopped on purpose; real
 posts always carry `--body-file`, and a plain terminal still runs
 `gh issue comment --help` fine.) If the command runs unblocked
-instead: check that step 4's block is valid JSON, then replace
+instead: run step 4's JSON check, then replace
 `$HOME` in the hook's command with your absolute home directory
 path; those two cover nearly every miss.
 

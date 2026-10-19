@@ -57,5 +57,6 @@ reject, and in eval mode it is skipped entirely.
 
 <!-- Honestly stated: this patch keeps true umbrella issues rejecting
 (the floor catches them) while accepting bounded issues with open
-edges. Note the patch and what drove it in your Toolkit entry; the
+edges. Note the patch and what drove it in the Toolkit block of your Why
+I Chose This Issue section; the
 patch itself is unit-9 portfolio material. -->

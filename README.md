@@ -40,8 +40,9 @@ Assignment tab.
 
 The install adds to what you already have. It adds the guard, replaces
 repro-check's and plan-check's scopes, and moves your voice guide to
-one home. Your rubric, strategy, evidence guide, and the Beat 1 skill
-folders in your course repo's `tools/` stay as they are.
+one home. It doesn't touch your scout (you patch its rubric yourself,
+with `rubric-scope-patch.md`) or the Beat 1 skill folders in your
+course repo's `tools/`.
 
 ## No eval/ here
 

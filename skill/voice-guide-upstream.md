@@ -50,8 +50,9 @@ pressure dressed as politeness. -->
 
 <!--
 NO UNIT 2 GUIDE? The frame carries you. Write ALL the sections fresh
-in your canonical guide, today: the unit-2 three (below) first, then
-the three upstream subsections above. It is more writing, and it is
+in your canonical guide, today: first the three unit 2 sections
+listed below, then the Upstream section above. Write every rule as
+plain text, outside these comment blocks. It is more writing, and it is
 entirely doable; ask a TF if you want a second pair of eyes on your
 first rules.
 

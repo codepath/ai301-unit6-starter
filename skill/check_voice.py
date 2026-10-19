@@ -163,7 +163,7 @@ def run_voice_pass(guide: str, draft: str) -> dict:
         try:
             proc = subprocess.run(["claude", "-p", "--model", MODEL],
                                   input=prompt, capture_output=True,
-                                  text=True, timeout=150)
+                                  text=True, timeout=80)
         except FileNotFoundError:
             raise RuntimeError("the claude CLI is not on PATH")
         except subprocess.TimeoutExpired:
