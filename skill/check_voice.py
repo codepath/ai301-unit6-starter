@@ -224,7 +224,10 @@ def check_draft(draft: str, mode: str, target: str) -> int:
                     mode, target, f"stop: checker failed ({e})")
     if verdict["verdict"] == "pass":
         log_line(mode, target, "pass")
-        print("voice-guard: pass. Your rules hold; posting.")
+        if mode == "hook":
+            print("voice-guard: pass. Your rules hold; posting.")
+        else:
+            print("voice-guard: pass. Your rules hold; you can post it.")
         return 0
     rule = verdict.get("rule", "(rule not quoted)")
     where = verdict.get("where", "")

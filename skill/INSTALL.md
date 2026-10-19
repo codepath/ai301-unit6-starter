@@ -55,7 +55,8 @@ wrong/right pair each. This is the judgment part of the install; the
 lecture's drafting moment gave you the first 2-3 rules, and the rest
 you write now. Once your rules are in, delete the template's
 instruction comments: the guide of record carries rules, not
-scaffolding.
+scaffolding. (Started a fresh guide in step 1? It already has the
+Upstream section, so skip the append and fill it.)
 
 ## 3. The canonical home
 
@@ -64,28 +65,34 @@ From the folder where you unpacked the Unit 6 materials:
 ```
 mkdir -p ~/.claude/voice-guard
 cp skill/check_voice.py skill/hooks-settings.json ~/.claude/voice-guard/
-mv ~/.claude/skills/repro-check/voice-guide.md ~/.claude/voice-guard/voice-guide.md
-ln -s ~/.claude/voice-guard/voice-guide.md ~/.claude/skills/repro-check/voice-guide.md
+[ -L ~/.claude/skills/repro-check/voice-guide.md ] || mv ~/.claude/skills/repro-check/voice-guide.md ~/.claude/voice-guard/voice-guide.md
+ln -sf ~/.claude/voice-guard/voice-guide.md ~/.claude/skills/repro-check/voice-guide.md
 ln -sf ~/.claude/voice-guard/voice-guide.md ~/.claude/skills/plan-check/voice-guide.md
 ln -sf ~/.claude/voice-guard/voice-guide.md ~/.claude/skills/pr-precheck/voice-guide.md
 ```
 
-The `mv` is the promotion; the `ln` lines leave repro-check,
+The `mv` is the promotion (the `[ -L ... ] ||` in front skips it if
+you already ran this block, so running it twice is safe); the `ln` lines leave repro-check,
 plan-check, and pr-precheck all reading the same single file (each
 skill's live mode reads `voice-guide.md` from its own folder), so
-the skills you draft with and the guard can never disagree about your rules. The last two use `-f` because they
+the skills you draft with and the guard can never disagree about your rules. The `-f` lets them
 overwrite your frozen carry-over copies, which step 1 already folded
-back. `hooks-settings.json` rides along so the canonical home holds
+back. If the plan-check or pr-precheck line says "No such file or
+directory", that skill isn't installed, so skip that line. `hooks-settings.json` rides along so the canonical home holds
 every guard file in one place. (If `ln -s` errors on your
 system, instead create each skill's `voice-guide.md` containing the
 single line: `My voice guide now lives at ~/.claude/voice-guard/voice-guide.md; read it there.`)
 
 ## 4. The hook
 
-Open `~/.claude/settings.json` (create it as `{}` if it does not
-exist) and merge in the block from `skill/hooks-settings.json`:
+Open `~/.claude/settings.json` and merge in the block from
+`skill/hooks-settings.json`:
 
-- No `"hooks"` key yet: paste the whole block from the file.
+- No settings file yet, or it holds only `{}`: replace its contents
+  with the whole file.
+- Settings but no `"hooks"` key yet: copy the `"hooks": { ... }`
+  entry from the file into your settings, with a comma between it
+  and the entry before it.
 - Already have hooks: add the `PreToolUse` entry from the file into
   your existing `"hooks"` object (or its matcher entry into your
   existing `"PreToolUse"` list).
@@ -95,13 +102,11 @@ startup).
 
 One thing said out loud: the hook is user-global. From now on the
 guard reads every outgoing comment, issue, or PR body you post
-through Claude Code, in every repo, course or not. That is the
-design: the guard checks what you post through Claude Code, course
-work or not.
+through Claude Code, in every repo, course or not.
 
 ## 5. Test that the guard fires
 
-The wiring test costs nothing and should be STOPPED:
+The wiring test should be STOPPED:
 
 ```
 claude "run this command: gh issue comment --help"
@@ -116,7 +121,8 @@ instead: check that step 4's block is valid JSON, then replace
 `$HOME` in the hook's command with your absolute home directory
 path; those two cover nearly every miss.
 
-Then check your own words the way the browser path always will:
+Once you have a draft (your claim comes later), you can check it
+the way the browser path always will:
 
 ```
 python3 ~/.claude/voice-guard/check_voice.py --draft <your claim draft file>

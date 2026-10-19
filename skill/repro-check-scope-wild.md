@@ -17,10 +17,10 @@ Staff wrote this file. It ships filled; there is nothing to edit.
 
 Any public repository, one issue at a time: the issue your claim
 names. That issue comes to you through your own evidence trail, the
-scout's saved scan (a fresh scan's top five, a curated-list pick, or
-an otherwise in-hand pick graded in direct mode). Do not grade
-drafts or packages for an issue you have no scan evidence for; the
-scan is what Assignment 5 reads.
+scout's saved read-out (a site pick graded in direct mode, usually
+saved in `~/.claude/skills/issue-scout/scan-output.md`, or a scan's
+top five). Do not grade
+drafts or packages for an issue your scout never graded.
 
 ## The wild's rules (the sandbox rules do not travel)
 

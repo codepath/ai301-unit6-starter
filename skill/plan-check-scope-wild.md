@@ -18,8 +18,9 @@ Staff wrote this file. It ships filled; there is nothing to edit.
 
 Any public repository, one issue at a time: the issue your claim
 names. That issue comes to you through your own evidence trail, the
-scout's saved scan (a fresh scan's top five, a curated-list pick, or
-an otherwise in-hand pick graded in direct mode) and the claim you
+scout's saved read-out (a site pick graded in direct mode, usually
+saved in `~/.claude/skills/issue-scout/scan-output.md`, or a scan's
+top five) and the claim you
 posted on it. Do not grade plans for an issue you have not claimed;
 the plan chapter of Assignment 5 is written for the issue in your
 selection section, and a plan comment upstream is a public commitment.
