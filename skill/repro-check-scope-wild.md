@@ -2,10 +2,10 @@
 
 <!--
 This is the real-world scope for repro-check. It replaces the unit-2
-sandbox scope.md in your INSTALLED skill (activity phase 1 has the
-copy command): the field is no longer the Path Review repo, and the
+sandbox scope.md in your INSTALLED skill (the unit 6 Assignment
+tab has the copy command): the field is no longer the Path Review repo, and the
 classroom house rules do not travel. Like every scope file, this one
-is the skill's field of view, live mode only: the rubric (rubric.md)
+says where the skill works, live mode only: the rubric (rubric.md)
 decides whether a package or a claim draft is READY; the scope
 decides which issues the skill may work against at all, and what the
 rules are where that issue lives. Eval runs never read this file.
@@ -17,10 +17,10 @@ Staff wrote this file. It ships filled; there is nothing to edit.
 
 Any public repository, one issue at a time: the issue your claim
 names. That issue comes to you through your own evidence trail, the
-scout's saved scan (a fresh scan's top five, a curated-list pick, or
-an otherwise in-hand pick graded in direct mode). Do not grade
-drafts or packages for an issue you have no scan evidence for; the
-scan is what Assignment 5 reads.
+scout's saved read-out (a site pick graded in direct mode, usually
+saved in `~/.claude/skills/issue-scout/scan-output.md`, or a scan's
+top five). Do not grade
+drafts or packages for an issue your scout never graded.
 
 ## The wild's rules (the sandbox rules do not travel)
 

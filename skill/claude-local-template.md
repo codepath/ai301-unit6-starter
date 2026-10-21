@@ -39,7 +39,12 @@ agent over ONLY the subsystem your issue touches (the directory, its
 key files, how they connect, where the tests live). Never whole-repo
 mapping: you are fixing one issue, not writing the repo a guidebook,
 and orientation you do not need is money spent on nothing. Distill
-what it finds into the subsystem section below.
+what it finds into the subsystem section below. A prompt that works,
+from the clone root:
+
+  claude "Read only <the folder your issue touches>. Tell me where
+  <the behavior in my issue> lives, the 2-4 files that matter, how
+  they connect, and where their tests are."
 
 KEEP IT OUT OF YOUR PR DIFF. You are a guest: you cannot add ignore
 rules to upstream's .gitignore. The local mechanism is
@@ -66,8 +71,8 @@ wrote this. -->
 
 ## Conventions from CONTRIBUTING.md
 
-<!-- Only the rules that will actually steer your work: what gates a
-PR, scope rules, branch and commit conventions, the process asks you
+<!-- Only the rules that will actually steer your work: what a PR needs
+before it's accepted, scope rules, branch and commit conventions, the process asks you
 could get wrong. Quote thresholds exactly; paraphrase the rest. -->
 
 ## The subsystem my issue touches

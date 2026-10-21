@@ -1,11 +1,11 @@
-# Today's rubric patch: scope stops gating, starts informing
+# This week's rubric patch: scope informs instead of rejecting
 
 <!-- Staff-shipped patch text for YOUR rubric.md. Paste the row and
 the section below into your rubric (the row replaces whichever check
 in your table grades scope, from the unit-1 family "the scope fits a
 newcomer"; the section goes under your checks table), reword them in
-your own voice if you like (it is your rubric), and add the dated
-patch note per the unit-5 rule. Delete this comment block wherever
+your own voice if you like (it is your rubric), and add a dated
+line to scan-notes.md naming the check you replaced. Delete this comment block wherever
 you paste. -->
 
 ## Why this patch exists
@@ -15,9 +15,9 @@ scope check cost you nothing there. The wild almost never ships a
 perfectly bounded issue: a real, claimable piece of work usually
 carries an open edge (an "etc.", an undecided design choice, a file
 nobody named). A check that rejects every open edge rejects most of
-the wild's honest work, and it is why a fresh scan can grade ten real
-candidates and accept none. So scope stops being a gate and becomes a
-difficulty note: the floor only rejects issues that are not one piece
+the wild's honest work, and it is why your scout can grade ten real
+issues and accept none. So scope stops deciding accept or reject and
+becomes a difficulty note: the floor only rejects issues that are not one piece
 of work at all, and everything above the floor gets flagged, not
 filtered. You choose with eyes open; an open edge in an issue you
 claim becomes your first question to the maintainer, which is
@@ -57,5 +57,6 @@ reject, and in eval mode it is skipped entirely.
 
 <!-- Honestly stated: this patch keeps true umbrella issues rejecting
 (the floor catches them) while accepting bounded issues with open
-edges. Note the patch and what drove it in your Toolkit entry; the
+edges. Note the patch and what drove it in the Toolkit block of your Why
+I Chose This Issue section; the
 patch itself is unit-9 portfolio material. -->
